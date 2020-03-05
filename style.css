@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+html {
+  background: url(https://cdn.glitch.com/b7643b5b-8aaa-4826-97c4-76f856ac2803%2Ffabrizio-conti-b5rPuIBFeME-unsplash.jpg?v=1569761318680) no-repeat center center fixed; 
+  background-size: cover;
+}
+
+a {
+  color: royalblue;
+  text-decoration: none;
+}
+
+a:hover, .choose-language > ul > li:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.content {
+  padding: 5% 10% 10%;
+}
+
+.option-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 5%;
+}
+
+.option-container:hover {
+  cursor: pointer;
+}
+
+.option-1, .option-2 {
+  width: 48%;
+  text-align: center;
+}
+
+.advice {
+  text-align: left;
+  margin-top: 2em;
+  padding: 1em;
+  background-color: rgba(255, 255, 255, .45);
+  font-size: 110%;
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+.photo-credit, .choose-language {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  font-size: 75%;
+  background-color: rgba(255, 255, 255, .45);
+  padding: 5px;
+}
+
+.choose-language {
+  left: unset;
+  right: 20px;
+}
+
+.choose-language > ul > li {
+  display: inline-block;
+  color: royalblue;
+}
+
+.choose-language > ul > li.active {
+  color: black;
+}
+
+.choose-language > ul > li.active:hover {
+  text-decoration: none;
+}
