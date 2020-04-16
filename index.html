@@ -1,59 +1,33 @@
 <!DOCTYPE html>
 <html lang="de">
   <head>
-    <title>flexed</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/png" href="https://cdn.glitch.com/b7643b5b-8aaa-4826-97c4-76f856ac2803%2Ffavicon.png?v=1569766340873"/>
-    <link rel="stylesheet" href="/style.css">
+    <title>Keinen Bock</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="https://cdn.glitch.com/b7643b5b-8aaa-4826-97c4-76f856ac2803%2Ffavicon.png?v=1569766340873"
+    />
+    <link rel="stylesheet" href="/style.css" />
     <script src="/script.js" defer></script>
-  </head>  
+  </head>
   <body>
-    <div class="content">
-      <div class="headline">
-        <h1>Ich habe keinen Bock!</h1>
+    <h1 id="headline">Ich habe keinen Bock!</h1>
+    <div id="content">
+      <div id="buttons">
+        <button id="motivate">Motivieren</button>
+        <button id="demotivate">Demotivieren</button>
+        <button id="language">To English</button>
       </div>
-      <div class="option-container">
-        <div class="option-1">
-          <div class="option en hidden">
-            <h2 class="choose en hidden">Motivate</h2>
-            <p class="advice en hidden">Sometimes you just have to push through the hard stuff to enjoy the outcome</p>
-            <p class="advice en hidden">Ask yourself: How does this connect to my larger goals?</p>
-            <p class="advice en hidden">Try for 5 minutes</p>
-          </div>
-          <div class="option de">
-            <h2 class="choose de">Motivieren</h2>
-            <p class="advice de hidden">Manchmal muss man sich durchsetzen, um das Ergebnis zu genießen</p>
-            <p class="advice de hidden">Frag dich selbst: Wie verbindet diese Situation sich mit meinen Lebensziele?</p>
-            <p class="advice de hidden">Versuche es für fünf Minuten</p>
-          </div>
-        </div>
-        <div class="option-2">
-          <div class="option en hidden">
-            <h2 class="choose en hidden">Demotivate</h2>
-            <p class="advice en hidden">Enjoy nature - go for a walk</p>
-            <p class="advice en hidden">Ask yourself: Why do I have to prove myself?</p>
-            <p class="advice en hidden">Take a break offline</p>
-          </div>
-          <div class="option de">
-            <h2 class="choose de">Demotivieren</h2>
-            <p class="advice de hidden">Öffne einem Fenster und denk an einen Spaziergang</p>
-            <p class="advice de hidden">Frag dich selbst: Warum sollte ich mich beweisen?</p>
-            <p class="advice de hidden">Mach eine Pause... ohne Internet</p>
-          </div>
-        </div>
-      </div>
-      <div class="photo-credit">
-        <p class="de">Foto von <a href="https://unsplash.com/@staticlaw">Fabrizio Conti</a> auf <a href="https://unsplash.com/">Unsplash</a></p>
-        <p class="en hidden">Photo by <a href="https://unsplash.com/@staticlaw">Fabrizio Conti</a> on <a href="https://unsplash.com/">Unsplash</a></p>
-      </div>
-      <div class="choose-language">
-        <ul>
-          <li id="en" class="">EN</li>
-          <li id="de" class="active">DE</li>
-        </ul>
-      </div>
+      <div id="advice"></div>
+    </div>
+    <div id="photo-credit">
+      <span id="span-one">Foto von </span>
+      <a href="https://unsplash.com/@staticlaw">Fabrizio Conti</a>
+      <span id="span-two"> auf </span>
+      <a href="https://unsplash.com/">Unsplash</a>
     </div>
     <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
     <script src="https://button.glitch.me/button.js"></script>

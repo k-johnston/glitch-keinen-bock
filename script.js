@@ -1,93 +1,208 @@
+// ~~ array of all of my advice
+var allMyAdvice = [
+  {
+    language: "en",
+    motivation: true,
+    advice:
+      "Sometimes you just have to push through the hard stuff to enjoy the outcome"
+  },
+  {
+    language: "en",
+    motivation: true,
+    advice: "Ask yourself: How does this connect to my larger goals?"
+  },
+  {
+    language: "en",
+    motivation: true,
+    advice: "Try for 5 minutes"
+  },
+  {
+    language: "de",
+    motivation: true,
+    advice: "Manchmal muss man sich durchsetzen, um das Ergebnis zu genießen"
+  },
+  {
+    language: "de",
+    motivation: true,
+    advice:
+      "Frag dich selbst: Wie verbindet diese Situation sich mit meinen Lebensziele?"
+  },
+  {
+    language: "de",
+    motivation: true,
+    advice: "Versuche es für fünf Minuten"
+  },
+  {
+    language: "en",
+    motivation: false,
+    advice: "Enjoy nature - go for a walk"
+  },
+  {
+    language: "en",
+    motivation: false,
+    advice: "Ask yourself: Why do I have to prove myself?"
+  },
+  {
+    language: "en",
+    motivation: false,
+    advice: "Take a break offline"
+  },
+  {
+    language: "de",
+    motivation: false,
+    advice: "Öffne einem Fenster und denk an einen Spaziergang"
+  },
+  {
+    language: "de",
+    motivation: false,
+    advice: "Frag dich selbst: Warum sollte ich mich beweisen?"
+  },
+  {
+    language: "de",
+    motivation: false,
+    advice: "Mach eine Pause... ohne Internet"
+  }
+];
+
+// ~~ user input variables
+var myMotivation, myAdvice;
+var eligibleAdvice = [];
+
 function chooseAdvice() {
-  
+  let myAdvice =
+    eligibleAdvice[Math.floor(Math.random() * eligibleAdvice.length)];
+  console.log(myAdvice);
+  adviceElement.textContent = myAdvice;
+  adviceElement.style.display = "block";
 }
 
-var myChoice = document.getElementsByClassName("choose");
-var myAdvice = document.getElementsByClassName("advice");
-
-
-/*
-colorOne.addEventListener("click", function findRandomColor() {
-  colorOne.className = "color";
-  let colorRandom = colorArray[Math.floor(Math.random() * colorArray.length)];
-  colorRandomValue = colorRandom.toString();
-  colorOne.classList.add(colorRandomValue);
-
-  let valueRandom = colorRandom;
-  valueOne.innerHTML = valueRandom;
-});
-
-addEventListener("click", function() {
-  console.log("it works");
-});
-
-
-
-// Function to change the content of t2
-function modifyText() {
-  var t2 = document.getElementById("t2");
-  if (t2.firstChild.nodeValue == "three") {
-    t2.firstChild.nodeValue = "two";
-  } else {
-    t2.firstChild.nodeValue = "three";
+function filterAdvice() {
+  eligibleAdvice = [];
+  for (let i = 0; i < allMyAdvice.length; i++) {
+    if (allMyAdvice[i].motivation == myMotivation && allMyAdvice[i].language == languageOfPage) {
+      eligibleAdvice.push(allMyAdvice[i].advice);
+    }
   }
 }
 
-// Add event listener to table
-var el = document.getElementById("outside");
-el.addEventListener("click", modifyText, false);
+function resetAdvice() {
+  adviceElement.textContent = "";
+  adviceElement.style.display = "none";
+}
 
+// ~~ page variables
+var languageOfPage = "de";
+const buttonMotivate = document.getElementById("motivate");
+const buttonDemotivate = document.getElementById("demotivate");
+const buttonLanguage = document.getElementById("language");
+const adviceElement = document.getElementById("advice");
 
+// ~~ buttons
+buttonMotivate.addEventListener("click", function motivateYou() {
+  myMotivation = true;
+  filterAdvice();
+  chooseAdvice();
+});
 
+buttonDemotivate.addEventListener("click", function demotivateYou() {
+  myMotivation = false;
+  filterAdvice();
+  chooseAdvice();
+});
 
+buttonLanguage.addEventListener("click", function changeLanguage() {
+  let headline = document.getElementById("headline");
+  let spanOne = document.getElementById("span-one");
+  let spanTwo = document.getElementById("span-two");
 
+  let deText = {
+    headline: "Ich habe keinen Bock!",
+    buttonMotivate: "Motivieren",
+    buttonDemotivate: "Demotivieren",
+    buttonLanguage: "To English",
+    spanOne: "Foto von ",
+    spanTwo: " auf "
+  };
+  let enText = {
+    headline: "I don't want to!",
+    buttonMotivate: "Motivate",
+    buttonDemotivate: "Demotivate",
+    buttonLanguage: "Auf Deutsch",
+    spanOne: "Photo by ",
+    spanTwo: " from "
+  };
 
+  resetAdvice();
 
-fix toggle language
-        <ul>
-          <li id="en" class="">EN</li>
-          <li id="de" class="active">DE</li>
-        </ul>
-        
-        function toggleLanguage() {
-  var languageEnglish = document.getElementById("en");
-  var classEnglish = document.getElementsByClassName("en");
+  console.log(languageOfPage);
+  if (languageOfPage === "de") {
+    languageOfPage = "en";
+    headline.textContent = enText.headline;
+    buttonMotivate.textContent = enText.buttonMotivate;
+    buttonDemotivate.textContent = enText.buttonDemotivate;
+    buttonLanguage.textContent = enText.buttonLanguage;
+    spanOne.textContent = enText.spanOne;
+    spanTwo.textContent = enText.spanTwo;
+    return languageOfPage;
+  } else {
+    languageOfPage = "de";
+    headline.textContent = deText.headline;
+    buttonMotivate.textContent = deText.buttonMotivate;
+    buttonDemotivate.textContent = deText.buttonDemotivate;
+    buttonLanguage.textContent = deText.buttonLanguage;
+    spanOne.textContent = deText.spanOne;
+    spanTwo.textContent = deText.spanTwo;
+    return languageOfPage;
+  }
+});
 
-  var languageDeutsch = document.getElementById("de");
-  var classDeutsch = document.getElementsByClassName("de");
+/* ~~ todo
+// topics to read about: toggle language best practices, button best practices, variable two values to store, creating a json file from JS - maybe put my object in there and then parse the json, i have 4 button event listeners - can i make a function and pass in the button name/function name for each one?
 
-  if (languageEnglish.classList.contains("active") == true) {
-    classDeutsch.style.display = "none";
-    classEnglish.style.display = "block";
-  } else if (languageDeutsch.classList.contains("active") == true) {
-    classEnglish.style.display = "none";
-    classDeutsch.style.display = "block";
-  }  
-} // needs an event handler
+add more advice?
 
+1. javascript - classes
+convert to a class - see bottom
+make it work again
 
-on click
-the other side goes away
-the advice shows up and then goes away to reset to the original / randomly selected motivation
-          <h2 class="en">Motivate</h2>
-          <h2 class="de">Motivieren</h2>
-          <p class="advice en hidden">Sometimes you just have to push through the hard stuff to enjoy the outcome</p>
-          <p class="advice en hidden">Ask yourself: How does this connect to my larger goals?</p>
-          <p class="advice en hidden">Try for 5 minutes</p>
-          <p class="advice de hidden">Sometimes you just have to push through the hard stuff to enjoy the outcome</p>
-          <p class="advice de hidden">Ask yourself: How does this connect to my larger goals?</p>
-          <p class="advice de hidden">Try for 5 minutes</p>
-        </div>
+2. css - fun
+hover over ich habe keinen Bock h1 translates it maybe?
+make ui more fun, nice effects and also responsive
+good button behavior
+ok on mobile too?
 
+3. publish - remove console logs, write up for blog
+remove console logs, remove/rename testing variables and unnecessary comments
 
-some nice effects in loading it, transitions
+goals from this 
 
+decreasing html complexity
+first made it too complicated in HTML with boxes for +- and by language - when i can just dynamically change content all of the time in the same box and the user can change the language between German and English - thinking of HTML as the box i put the content in made it easier - and close to taking content from JSON and doing something with it
+
+good button behavior
+
+JavaScript
+-- classes - an instance of MyAdvice from allMyAdvice object
+-- toggling
+-- mapping / for each an array
+
+UI of language changes on a website / what does a fun website feel like
+-- what would the language default be - for a german phrase... german
+-- color and big buttons
+
+work on css transitons and animations
 */
 
-/* todo 
-design 
-JS
-what to do to switch langauge? https://stackoverflow.com/questions/32008125/using-javascript-to-change-website-language
-responsive of course 
-buttons
+/*
+// class
+class RandomAdvice {}
+
+const adviceObject = {
+  language: "xx",
+  motivation: true, // demotivation is false
+  advice: "words"
+};
+
+// convert functions to class methods
+//instance is MyAdvice
 */
