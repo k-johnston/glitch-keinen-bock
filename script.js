@@ -157,19 +157,16 @@ buttonLanguage.addEventListener("click", function changeLanguage() {
 });
 
 /* ~~ todo
-// topics to read about: toggle language best practices, button best practices, variable two values to store, creating a json file from JS - maybe put my object in there and then parse the json, i have 4 button event listeners - can i make a function and pass in the button name/function name for each one?
 
-add more advice?
+add more advice to the object?
 
 1. javascript - classes
 convert to a class - see bottom
 make it work again
 
 2. css - fun
-hover over ich habe keinen Bock h1 translates it maybe?
-make ui more fun, nice effects and also responsive
-good button behavior
-ok on mobile too?
+make ui more fun, nice effects
+layout for phones
 
 3. publish - remove console logs, write up for blog
 remove console logs, remove/rename testing variables and unnecessary comments
@@ -178,8 +175,6 @@ goals from this
 
 decreasing html complexity
 first made it too complicated in HTML with boxes for +- and by language - when i can just dynamically change content all of the time in the same box and the user can change the language between German and English - thinking of HTML as the box i put the content in made it easier - and close to taking content from JSON and doing something with it
-
-good button behavior
 
 JavaScript
 -- classes - an instance of MyAdvice from allMyAdvice object
